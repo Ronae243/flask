@@ -11,12 +11,12 @@ class HouseProperties(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(80))
-    num_of_rooms = db.Column(db.Integer)
-    num_of_bathrooms = db.Column(db.Integer)
-    price = db.Column(db.Integer)
+    num_of_rooms = db.Column(db.Integer())
+    num_of_bathrooms = db.Column(db.Integer())
+    price = db.Column(db.Integer())
     property_type = db.Column(db.String(80))
     location = db.Column(db.String(80))
-    property_photo =db.Column(db.String(80))
+    property_photo =db.Column(db.String())
     description = db.Column(db.String(300))
 
     def __init__(self, title, description, num_of_rooms,  num_of_bathrooms, price, property_type, location, property_photo):

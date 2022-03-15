@@ -4,14 +4,28 @@ Jinja2 Documentation:    https://jinja.palletsprojects.com/
 Werkzeug Documentation:  https://werkzeug.palletsprojects.com/
 This file creates your application.
 """
-
+import os
 from app import app, db
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, flash 
 from .forms import ContactForm
+from werkzeug.utils import secure_filename
 from .models import HouseProperties
 
 
+
+
+
+##
+# #Helper Functions 
 ###
+
+def get_image_name(x_file):
+    filename = (os.path.basename(x_file))
+    return filename
+    
+###
+
+
 # Routing for your application.
 ###
 
@@ -27,15 +41,44 @@ def about():
     return render_template('about.html', name="Ronae Johnson")
 
 
-@app.route('/properties/create', methods = ['GET'])
+@app.route('/properties/create', methods = ['GET','POST'])
 def properties_c():
-    properties_form = ContactForm()
-    
-    return render_template('add.html', form=properties_form)
+    form = ContactForm()
+
+    if request.method == 'POST':
+        if form.validate_on_submit() == True:
+            title = request.form['title']
+            num_of_rooms = request.form['num_rooms']
+            num_of_bathrooms = request.form['num_bathrooms']
+            price = request.form['price']
+            property_type = request.form['property_type']
+            location = request.form['location']
+            description = request.form['description']
+            file = request.files['up_image']
+
+            #saves photos to uplaods folder
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+
+            #passes data to collected from from to database
+            entry = HouseProperties(title, description, num_of_rooms, num_of_bathrooms, price, property_type, location, filename)
+            db.session.add(entry)
+            db.session.commit()
+
+            flash('Message sent to server')
+            return redirect(url_for('home'))
+        else:
+            flash('Message was not sent')
+            return render_template('add.html', form=form)
+    elif request.method == 'GET':
+        return render_template('add.html', form=form)
+
 
 """
 @app.route('/properties')
-def properties_d():
+def properties_s():
+
 
 @app.route('/properties/<propertyid>')
 def property():
