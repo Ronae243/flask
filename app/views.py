@@ -6,25 +6,17 @@ This file creates your application.
 """
 import os
 from app import app, db
-from flask import render_template, request, redirect, url_for, flash 
+from flask import render_template, request, redirect, url_for, flash, send_from_directory
 from .forms import ContactForm
 from werkzeug.utils import secure_filename
 from .models import HouseProperties
 
 
-
-
-
-##
-# #Helper Functions 
-###
-
-def get_image_name(x_file):
-    filename = (os.path.basename(x_file))
-    return filename
-    
-###
-
+@app.route('/photos/<filename>')
+def get_images(filename):
+    spec_img = send_from_directory(os.path.join(os.getcwd(),
+    app.config['UPLOAD_FOLDER']), filename)
+    return spec_img
 
 # Routing for your application.
 ###
@@ -67,7 +59,7 @@ def properties_c():
             db.session.commit()
 
             flash('Message sent to server')
-            return redirect(url_for('home'))
+            return redirect(url_for('properties_s'))
         else:
             flash('Message was not sent')
             return render_template('add.html', form=form)
@@ -75,10 +67,13 @@ def properties_c():
         return render_template('add.html', form=form)
 
 
-"""
+
 @app.route('/properties')
 def properties_s():
+    column_data = HouseProperties.query.all()
+    return render_template('properties.html', image_gal = column_data)
 
+"""
 
 @app.route('/properties/<propertyid>')
 def property():
