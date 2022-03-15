@@ -75,14 +75,20 @@ def properties_c():
 @app.route('/properties', methods = ['GET', 'POST'])
 def properties_s():
     form = ContactForm()
-    column_data = HouseProperties.query.all()
-    return render_template('properties.html', image_gal = column_data, view_btn = form)
+    if request.method == 'GET':
 
-"""
+       column_data = HouseProperties.query.all()
+       return render_template('properties.html', image_gal = column_data, view_btn = form)
+    
+    elif request.method =='POST':
+        return redirect(url_for('property'))
+
 
 @app.route('/properties/<propertyid>')
 def property():
-"""
+     return render_template('property.html')
+
+ 
 
 ###
 # The functions below should be applicable to all Flask apps.
