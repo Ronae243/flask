@@ -18,6 +18,10 @@ def get_images(filename):
     app.config['UPLOAD_FOLDER']), filename)
     return spec_img
 
+@app.template_filter()
+def numberFormat(value):
+    return format(int(value), ',d')
+
 # Routing for your application.
 ###
 
@@ -68,10 +72,11 @@ def properties_c():
 
 
 
-@app.route('/properties')
+@app.route('/properties', methods = ['GET', 'POST'])
 def properties_s():
+    form = ContactForm()
     column_data = HouseProperties.query.all()
-    return render_template('properties.html', image_gal = column_data)
+    return render_template('properties.html', image_gal = column_data, view_btn = form)
 
 """
 
