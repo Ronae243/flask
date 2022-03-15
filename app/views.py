@@ -5,9 +5,10 @@ Werkzeug Documentation:  https://werkzeug.palletsprojects.com/
 This file creates your application.
 """
 
-from app import app
+from app import app, db
 from flask import render_template, request, redirect, url_for
 from .forms import ContactForm
+from .models import HouseProperties
 
 
 ###
