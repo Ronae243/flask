@@ -10,12 +10,12 @@ class HouseProperties(db.Model):
     __tablename__ = 'property'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    title = db.Column(db.String(80))
+    title = db.Column(db.String(50))
     num_of_rooms = db.Column(db.Integer())
     num_of_bathrooms = db.Column(db.Integer())
     price = db.Column(db.Integer())
-    property_type = db.Column(db.String(80))
-    location = db.Column(db.String(80))
+    property_type = db.Column(db.String(30))
+    location = db.Column(db.String(30))
     property_photo =db.Column(db.String())
     description = db.Column(db.String(300))
 

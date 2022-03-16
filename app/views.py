@@ -84,9 +84,10 @@ def properties_s():
         return redirect(url_for('property'))
 
 
-@app.route('/properties/<propertyid>')
-def property():
-     return render_template('property.html')
+@app.route('/properties/<propertyid>',  methods = ['GET', 'POST'])
+def property(propertyid):
+     infoa = HouseProperties.query.filter_by(id=propertyid).first()
+     return render_template('property.html', info = infoa)
 
  
 

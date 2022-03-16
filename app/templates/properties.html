@@ -10,14 +10,11 @@
         <p>{{iter_img.title}}</p>
         <p>{{iter_img.location}}</p>
         <p id ="box" >${{ iter_img.price | numberFormat}} </p>
-        <form  method="POST" action="/properties/create">
-            {{view_btn.view (class ="id")}}
+        <form  method="POST" action="/properties/<propertyid>">
+            <a class="id" href="{{ url_for('property', propertyid = iter_img.id ) }}">View Property</a>
         </form>
-        
     </div>
    {% endfor %}    
-
 </div>
-   
   
 {% endblock %}

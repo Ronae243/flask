@@ -17,4 +17,3 @@ class ContactForm(FlaskForm):
     location = StringField('Location', validators=[DataRequired()], render_kw={'placeholder': '10 Waterloo Rd'})
     up_image = FileField('Photos', validators=[FileRequired(), FileAllowed(['jpg','png'])])
     submit = SubmitField('Add Property')
-    view = SubmitField('View Property')

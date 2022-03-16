@@ -2,14 +2,24 @@
 
 {% block main %}
 
-<h3>Properties</h3>
-<div class = "grid">
-    <div class ="cards">
-        <img src="{{ url_for('get_images', filename = iter_img.property_photo )}}" alt="img" >
-        <p>{{iter_img.title}}</p>
-        <p>{{iter_img.location}}</p>
-        <p id ="box" >${{ iter_img.price | numberFormat}} </p>
-    </div>
+<div class = "grid2">
+    
+    <div class ="card">
+        <img src="{{ url_for('get_images', filename = info.property_photo )}}" alt="img" > 
+        <p>{{info.title}}</p>
+        <p id ="box2">${{info.price  | numberFormat}}</p>
+        <p id ="box3">{{info.property_type}}</p>
+        <p>{{info.description}}</p> 
+        <img id="bed" src="{{ url_for('static', filename = 'Asset/img_571841.png' )}}" alt="img" > 
+        <p >{{info.num_of_rooms}} Bedrooms</p> 
+        <img id="shower" src="{{ url_for('static', filename = 'Asset/R.png' )}}" alt="img" >  
+        <p>{{info.num_of_bathrooms}} Bathrooms</p>
+        <p>{{info.location}}</p>
+        <div >
+            <button>Email Realtor</button>
+        </div>
+     
+    </div>   
 
 </div>
    
