@@ -243,6 +243,7 @@ h3{
     border-radius: 5px;
     padding-top: -5px;
     height: 520px ;
+    flex-direction: row;
     background-color: FFFFFF;
     box-shadow: 3px 6px 14px 1px rgba(0,0,0,0.24);
     flex-flow: column nowrap;
@@ -266,7 +267,7 @@ h3{
 }
 
 
-.card :nth-child(2){
+#q{
     display: flexbox;
     flex-wrap: wrap;
     margin-bottom: -5px;
@@ -275,17 +276,18 @@ h3{
     padding-left: 50px;
     font-weight: 500;
     width: 600px;
-
 }
 
-.card :nth-child(3){
-    color:white;
+
+
+.box2{
+    color: white;
     margin-top: 20px;
     padding-left: 40px;
     font-weight: 500;
 }
 
-.card :nth-child(4){
+#r{
    color: white;
     margin-top: 20px;
     margin-left: 250px;
@@ -293,7 +295,7 @@ h3{
     font-weight: 500;
 }
 
-.card :nth-child(5){
+.d{
     display: flexbox;
     height: 180px;
     margin-left: 49px;
@@ -305,27 +307,30 @@ h3{
 }
 
 
-.card :nth-child(7){
+#hh{
 
     margin-left: 90px;
-    margin-top: -30px;
+    margin-top: -28px;
 }
 
+#option{
+    margin-top: 60px;
+}
 
-.card :nth-child(9){
+#pp{
 
     margin-top: -38px;
   padding-left: 266px;
 }
 
-.card :nth-child(10){
+#ll{
 
     margin-left: 50px;
     padding-top: 20px;
 }
 
 
-.card :nth-child(11) button{
+#tt button{
     width: 120px;
     height: 40px;
     border: none;
@@ -336,7 +341,7 @@ h3{
 }
 
 
-#box2{
+.box2{
     background-color: rgb(96,164,250);
     border-radius: 10px;
     margin-left: 50px;
@@ -347,7 +352,6 @@ h3{
 }
 
 #box3{
-    display: flex;
     background-color: rgb(250,190,36);
     width: fit-content;
     border-radius: 10px;

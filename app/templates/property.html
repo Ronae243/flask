@@ -6,18 +6,45 @@
     
     <div class ="card">
         <img src="{{ url_for('get_images', filename = info.property_photo )}}" alt="img" > 
-        <p>{{info.title}}</p>
-        <p id ="box2">${{info.price  | numberFormat}}</p>
-        <p id ="box3">{{info.property_type}}</p>
-        <p>{{info.description}}</p> 
-        <img id="bed" src="{{ url_for('static', filename = 'Asset/img_571841.png' )}}" alt="img" > 
-        <p >{{info.num_of_rooms}} Bedrooms</p> 
-        <img id="shower" src="{{ url_for('static', filename = 'Asset/R.png' )}}" alt="img" >  
-        <p>{{info.num_of_bathrooms}} Bathrooms</p>
-        <p>{{info.location}}</p>
-        <div >
-            <button>Email Realtor</button>
+       
+        <div id="q">
+            <p>{{info.title}}</p>
         </div>
+
+        <div id="w">
+            <p class ="box2"> ${{info.price  | numberFormat}}</p>
+        <div>
+
+        <div id="r">
+            <p id ="box3">{{info.property_type}}</p>
+        </div>
+
+        <div class = "d"> 
+            <p>{{info.description}}</p> 
+        </div>
+        <div id="option">
+            <img id="bed" src="{{ url_for('static', filename = 'Asset/img_571841.png' )}}" alt="img" > 
+         
+            <div id="hh">
+                <p>{{info.num_of_rooms}} Bedrooms</p> 
+            </div> 
+    
+            <img id="shower" src="{{ url_for('static', filename = 'Asset/R.png' )}}" alt="img" >  
+            
+            <div id="pp">
+                <p>{{info.num_of_bathrooms}} Bathrooms</p>
+            </div>
+    
+           <div id="ll">
+              <p>{{info.location}}</p>
+           </div>
+         
+            <div id="tt">
+                <button>Email Realtor</button>
+            </div>
+
+        </div>
+     
      
     </div>   
 
