@@ -3,18 +3,18 @@
 {% block main %}
 
 <h3>Properties</h3>
-<div class = "grid">
-    {% for iter_img in image_gal %}
-    <div class ="cards">
-        <img src="{{ url_for('get_images', filename = iter_img.property_photo )}}" alt="img" >
-        <p>{{iter_img.title}}</p>
-        <p>{{iter_img.location}}</p>
-        <p id ="box" >${{ iter_img.price | numberFormat}} </p>
-        <form  method="POST" action="/properties/<propertyid>">
-            <a class="id" href="{{ url_for('property', propertyid = iter_img.id ) }}">View Property</a>
-        </form>
-    </div>
-   {% endfor %}    
-</div>
+ <div class = "grid">
+     {% for iter_img in image_gal %}
+     <div class ="cards">
+         <img src="{{ url_for('get_images', filename = iter_img.property_photo )}}" alt="img" >
+         <p>{{iter_img.title}}</p>
+         <p>{{iter_img.location}}</p>
+         <p id ="box" >${{ iter_img.price | numberFormat}} </p>
+         <form  method="POST" action="/properties/<propertyid>">
+             <a class="id" href="{{ url_for('property', propertyid = iter_img.id ) }}">View Property</a>
+         </form>
+     </div>
+    {% endfor %}    
+ </div>
   
 {% endblock %}

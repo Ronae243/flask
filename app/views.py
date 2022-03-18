@@ -65,7 +65,7 @@ def properties_c():
             flash('Message sent to server')
             return redirect(url_for('properties_s'))
         else:
-            flash('Message was not sent')
+            flash('Message was not sent','success')
             return render_template('add.html', form=form)
     elif request.method == 'GET':
         return render_template('add.html', form=form)

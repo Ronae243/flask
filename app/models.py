@@ -17,7 +17,7 @@ class HouseProperties(db.Model):
     property_type = db.Column(db.String(30))
     location = db.Column(db.String(30))
     property_photo =db.Column(db.String())
-    description = db.Column(db.String(300))
+    description = db.Column(db.String(300), unique=False)
 
     def __init__(self, title, description, num_of_rooms,  num_of_bathrooms, price, property_type, location, property_photo):
         self.title = title
