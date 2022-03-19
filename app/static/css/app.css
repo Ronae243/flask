@@ -142,7 +142,8 @@ h3{
     display: grid;
     justify-content: center;
     margin-top: 60px;
-    grid-template-columns: 400px  400px  400px;
+    grid-template-columns: repeat(auto-fit, minmax(auto,400px));
+    grid-column: a;
     column-gap: 25px;
     row-gap: 15px;
 }
@@ -161,12 +162,12 @@ h3{
 }
 
 .cards img{
-    display: grid;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 290px;
+    width: 100%;
     transition: transform .5s ease-in-out;
-    width: 400px; 
+    flex-shrink: 1 1 0;
     object-fit:cover;
 }
 
@@ -190,10 +191,11 @@ h3{
 .cards :nth-child(2){
     font-size: 20px;
     padding-left: 20px;
+    padding-right: 20px;
     font-weight: 500;
-    margin-top: 0;
-    width: 390px;
-    word-wrap: break-word;
+    width: 100%;
+    word-break: break-all;
+
 }
 
 .cards :nth-child(3){
@@ -209,27 +211,24 @@ h3{
 }
 
 .cards form{
+    flex: 0 1 1;
     margin-top: auto;
     display: flex;
+    text-align: center;
 }
 
 .id{
     background-color: rgb(21,184,167);
     text-decoration: none;
     font-size: 17px;
-    font-weight: 500;
-    padding-left: 137px;
-    padding-top: 20px;
-    justify-items: center;
-    width: 300px;
     color: white;
+    padding-top: 12px;
+    width: 100%;
     border-radius: 0px 0px 5px 5px;
     box-shadow: none;
     border: none;
     outline: none;
-    width: 400px;
-    height: 60px;
-
+    height: 55px;
 }
 
 .id:hover{
