@@ -236,22 +236,32 @@ h3{
 }
 
 
-.card{
-    display: flexbox;  
-    margin-top: 90px; 
+
+
+.grid2{
+    display: grid;
+    background-color: blue;
+    grid-column: 300px 396px;
+}
+
+
+
+.card1{
+    display: flex;   
     border-radius: 5px;
     padding-top: -5px;
     height: 520px ;
-    flex-direction: row;
     background-color: FFFFFF;
     box-shadow: 3px 6px 14px 1px rgba(0,0,0,0.24);
     flex-flow: column nowrap;
     flex-wrap: wrap;
-    margin-bottom: 100px;
+
+   
 }
 
 
-.card img{
+
+.card1 img{
         display: grid;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -261,7 +271,15 @@ h3{
         object-fit:cover;
 }
 
-.card img:hover{
+.card{
+    display: flex;  
+    background-color: FFFFFF;
+    box-shadow: 3px 6px 14px 1px rgba(0,0,0,0.24);
+    flex-flow: column nowrap;
+    flex-wrap: wrap;
+}
+
+.card1 img:hover{
     transform: scale(1.2);
 }
 
@@ -275,6 +293,7 @@ h3{
     padding-left: 50px;
     font-weight: 500;
     width: 600px;
+    
 }
 
 
@@ -360,7 +379,6 @@ h3{
 }
 
 
-
 #bed{
     height: 39px;
     width: 25px;
@@ -374,3 +392,4 @@ h3{
     margin-left: 200px;
     margin-top: -54px;
 }
+
