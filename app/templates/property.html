@@ -25,18 +25,18 @@
             <p>{{info.description}}</p> 
         </div>
         <div id="option">
-            <img id="bed" src="{{ url_for('static', filename = 'Asset/img_571841.png' )}}" alt="img" > 
-         
-            <div id="hh">
-                <p>{{info.num_of_rooms}} Bedrooms</p> 
-            </div> 
-    
-            <img id="shower" src="{{ url_for('static', filename = 'Asset/R.png' )}}" alt="img" >  
-            
-            <div id="pp">
-                <p>{{info.num_of_bathrooms}} Bathrooms</p>
-            </div>
-    
+                
+           <div id = "adapt">
+              <div id="hh">
+                  <img id="bed" src="{{ url_for('static', filename = 'Asset/img_571841.png' )}}" alt="img" > 
+                  <p>{{info.num_of_rooms}} Bedrooms</p> 
+              </div> 
+              <div>
+                  <img id="shower" src="{{ url_for('static', filename = 'Asset/R.png' )}}" alt="img" >  
+                  <p id="pp">{{info.num_of_bathrooms}} Bathrooms</p>
+               </div>  
+           </div>
+        
            <div id="ll">
               <p>{{info.location}}</p>
            </div>

@@ -5,4 +5,3 @@ function notify() {
   alert('in here I will do something');
 }
 
-// notify();

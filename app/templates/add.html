@@ -4,52 +4,56 @@
 <header>
     <h2>Add New Property</h2>
 </header>
-<form method="POST" action="/properties/create" enctype="multipart/form-data">
-    {{ form.csrf_token }}
+<div class="formgrid">
+    <form method="POST" action="/properties/create" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        
+        <div class="title">
+            <p>{{ form.title.label}}</p>
+            {{ form.title }}
+        </div>
+        
+        <div class="description">
+            <p>{{ form.description.label}}</p>
+            {{ form.description }}
+        </div>
+        
+        <div class="no_room">
+            <p>{{ form.num_rooms.label}}</p>
+            {{ form.num_rooms }}
+        </div>
+        
+        <div class="no_bathrooms">
+            <p>{{ form.num_bathrooms.label}}</p>
+            {{ form.num_bathrooms }}
+        </div>
     
-    <div class="title">
-        <p>{{ form.title.label}}</p>
-        {{ form.title }}
-    </div>
+        <div class="price">
+            <p>{{ form.price.label}}</p>
+            {{ form.price }}
+        </div>
     
-    <div class="description">
-        <p>{{ form.description.label}}</p>
-        {{ form.description }}
-    </div>
+        <div class="type">
+            <p>{{ form.property_type.label}}</p>
+            {{ form.property_type }}
+        </div>
     
-    <div class="no_room">
-        <p>{{ form.num_rooms.label}}</p>
-        {{ form.num_rooms }}
-    </div>
+        <div class="location">
+            <p>{{ form.location.label}}</p>
+            {{ form.location }}
+        </div>
     
-    <div class="no_bathrooms">
-        <p>{{ form.num_bathrooms.label}}</p>
-        {{ form.num_bathrooms }}
-    </div>
-
-    <div class="price">
-        <p>{{ form.price.label}}</p>
-        {{ form.price }}
-    </div>
-
-    <div class="type">
-        <p>{{ form.property_type.label}}</p>
-        {{ form.property_type }}
-    </div>
-
-    <div class="location">
-        <p>{{ form.location.label}}</p>
-        {{ form.location }}
-    </div>
-
-    <div class="Photos">
-        <p>{{ form.up_image.label}}</p>
-        {{ form.up_image (id ="btn") }}
-    </div>
-
-    <div class="btn"> 
-        {{form.submit (id ="b")}}
-    </div>
+        <div class="Photos">
+            <p>{{ form.up_image.label}}</p>
+            {{ form.up_image (id ="btn") }}
+        </div>
     
-</form>
+        <div class="btn"> 
+            {{form.submit (id ="b")}}
+        </div>
+        
+    </form>
+
+</div>
+
 {% endblock %}
