@@ -8,8 +8,9 @@
      <div class ="cards">
          <img src="{{ url_for('get_images', filename = iter_img.property_photo )}}" alt="img" >
          <p>{{iter_img.title}}</p>
-         <p>{{iter_img.location}}</p>
+         <p>{{iter_img.location}}</p> 
          <p id ="box" >${{ iter_img.price | numberFormat}} </p>
+         <img id="locationpic" src="{{ url_for('static', filename = 'Asset/clipart170231.png' )}}" alt="img" > 
          <form  method="POST" action="/properties/<propertyid>">
              <a class="id" href="{{ url_for('property', propertyid = iter_img.id ) }}">View Property</a>
          </form>
