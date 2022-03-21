@@ -261,7 +261,7 @@ h3{
 
 .card1{
     display: flex;   
-    border-radius: 5px;
+    border-radius: 6px;
     padding-top: -5px;
     height: 100%;
     width: 100%;
@@ -274,8 +274,7 @@ h3{
 
 .card1 img{
         display: grid;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-radius: 6px;
         height: 100%;
         flex-shrink: 1 1 0 ;
         width: 100%;
